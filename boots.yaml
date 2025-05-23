@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: boots-pod
+  namespace: ingress-nginx
+  labels:
+    app: boots
+spec:
+  containers:
+    - name: boots
+      image: azakg/boots-site:latest
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: boots-service
+  namespace: ingress-nginx
+spec:
+  selector:
+    app: boots
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+

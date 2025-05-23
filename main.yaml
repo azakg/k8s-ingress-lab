@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: main-pod
+  namespace: ingress-nginx
+  labels:
+    app: main
+spec:
+  containers:
+    - name: main
+      image: azakg/main-site:latest
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: main-service
+  namespace: ingress-nginx
+spec:
+  selector:
+    app: main
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
