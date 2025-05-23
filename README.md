@@ -51,3 +51,11 @@ http://127.0.0.1/  - This main page
 http://127.0.0.1/jacket -- This is jacket page
 http://127.0.0.1/boots  -- This is boots page
 
+
+🧠 Notes
+All resources live in the ingress-nginx namespace.
+
+Paths are routed by NGINX Ingress based on URL prefixes.
+
+✍️ Author
+Azamat Apsamatov
